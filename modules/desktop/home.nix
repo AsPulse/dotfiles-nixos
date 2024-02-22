@@ -39,5 +39,6 @@
     ./home/deno.nix
     ./home/rust.nix
     ./home/neovim.nix
+    ./home/hyprland.nix
   ];
 }

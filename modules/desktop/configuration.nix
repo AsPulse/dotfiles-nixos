@@ -17,6 +17,7 @@
     gcc
     clang
     unzip
+    lshw
   ];
   environment.variables.EDITOR = "vim";
 
@@ -32,7 +33,7 @@
     shell = pkgs.zsh;
     createHome = true;
     home = "/home/aspulse";
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "video" "audio" ];
     isNormalUser = true;
     uid = 1000;
   };
