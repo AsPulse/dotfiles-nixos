@@ -4,11 +4,11 @@
     withNodeJs = true;
   };
   home.file.".config/nvim" = {
-    source = ./config;
+    source = ../../../neovim;
     recursive = false;
   };
   home.file.".vim/tsnip" = {
-    source = ./tsnip;
+    source = ../../../tsnip;
     recursive = false;
   };
   home.packages = with pkgs; [

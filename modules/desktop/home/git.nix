@@ -6,7 +6,7 @@
     lfs.enable = true;
     extraConfig = {
       diff.external = "difft";
-      core.excludesfile = "~/.gitignore_global"
+      core.excludesfile = "~/.gitignore_global";
     };
   };
 
