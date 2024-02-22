@@ -7,6 +7,10 @@
     source = ./config;
     recursive = false;
   };
+  home.file.".vim/tsnip" = {
+    source = ./tsnip;
+    recursive = false;
+  };
   home.packages = with pkgs; [
     nodePackages.typescript-language-server
   ];
