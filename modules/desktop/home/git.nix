@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   programs.git = {
     enable = true;
-    userName = "AsPulse";
+    userName = "AsPulse / あすぱる";
     userEmail = "contact@aspulse.dev";
   };
 
