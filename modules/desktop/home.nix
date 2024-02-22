@@ -30,7 +30,6 @@
     obs-studio
     gimp
     mongodb-compass
-    btop
   ];
 
   imports = [
