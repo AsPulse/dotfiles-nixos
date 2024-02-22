@@ -10,6 +10,7 @@
     obs-studio
     gimp
     mongodb-compass
+    discord-ptb
   ];
 
   home.file.".config/hypr/hyprland.conf" = {
