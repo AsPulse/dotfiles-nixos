@@ -2,6 +2,7 @@
 
   imports = [
     ./hyprland/rofi.nix
+    ./hyprland/vivaldi.nix
   ];
 
   home.packages = with pkgs; [
