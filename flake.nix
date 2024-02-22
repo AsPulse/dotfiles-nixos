@@ -18,6 +18,13 @@
 	  ./modules/desktop/configuration.nix
 	];
       };
+      alienware-desktop = inputs.nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+	modules = [
+	  ./hosts/alienware/configuration.nix
+	  ./modules/desktop/configuration.nix
+	];
+      };
     };
     homeConfigurations = {
       desktop = inputs.home-manager.lib.homeManagerConfiguration {

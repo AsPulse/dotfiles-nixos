@@ -1,7 +1,11 @@
 { pkgs, ... }: {
   system.stateVersion = "23.11";
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_xanmod;
-  networking.hostName = "aspulse-nixos";
+
+  networking = {
+    hostName = "aspulse-nixos";
+    networkmanager.enable = true;
+  };
 
   imports = [
     ./docker.nix
