@@ -35,6 +35,9 @@
   imports = [
     ./home/zsh.nix
     ./home/git.nix
+    ./home/node.nix
+    ./home/deno.nix
+    ./home/rust.nix
     ./home/neovim/neovim.nix
   ];
 }
