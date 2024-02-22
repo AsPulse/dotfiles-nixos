@@ -9,15 +9,18 @@
     home-manager {
       enable = true;
     };
-    neovim = {
-      enable = true;
-      defaultEditor = true;
-    };
-    zsh = {
-      enable = true;
-    };
-    starship = {
-      enable = true;
-    };
   };
+
+  home.packages = with pkgs; [
+    bat
+    exa
+    ripgrep
+    fd
+  ];
+
+  imports = [
+    ./home/zsh.nix
+    ./home/git.nix
+    ./home/neovim/neovim.nix
+  ];
 }
