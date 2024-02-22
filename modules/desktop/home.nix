@@ -16,6 +16,8 @@
     eza
     ripgrep
     fd
+    xcp
+    dust
   ];
 
   imports = [
