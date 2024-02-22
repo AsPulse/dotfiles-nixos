@@ -18,17 +18,5 @@
     isNormalUser = true;
     uid = 1000;
   };
-
-  programs = {
-    neovim = {
-      enable = true;
-      defaultEditor = true;
-    };
-    zsh = {
-      enable = true;
-    };
-    starship = {
-      enable = true;
-    };
-  };
+  programs.zsh.enable = true;
 }
