@@ -11,10 +11,6 @@
     };
   };
 
-  networking.hostName = "aspulse-nixos";
-  nix.settings.auto-optimise-store = true;
-  nixpkgs.config.allowUnfree = true;
-
   home.packages = with pkgs; [
     bat
     eza
