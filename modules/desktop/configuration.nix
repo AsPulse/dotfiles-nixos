@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   system.stateVersion = "23.11";
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_xanmod;
 
   environment.systemPackages = with pkgs; [
     git
