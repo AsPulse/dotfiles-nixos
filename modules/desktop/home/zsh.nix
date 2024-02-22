@@ -9,9 +9,9 @@
     };
     shellAliases = {
       cat = "bat";
-      ls = "exa --icons --classify";
-      la = "exa --all --icons --classify";
-      ll = "exa --long --all --git --icons";
+      ls = "eza --icons --classify";
+      la = "eza --all --icons --classify";
+      ll = "eza --long --all --git --icons";
     };
   };
   programs.starship = {

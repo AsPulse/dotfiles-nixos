@@ -15,4 +15,8 @@
       editor = "nvim";
     };
   };
+
+  home.packages = with pkgs; [
+    lazygit
+  ];
 }

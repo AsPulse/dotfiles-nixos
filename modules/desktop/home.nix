@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   home = rec {
     username = "aspulse";
     homeDirectory = "/home/${username}";
@@ -6,14 +6,14 @@
   };
 
   programs = {
-    home-manager {
+    home-manager = {
       enable = true;
     };
   };
 
   home.packages = with pkgs; [
     bat
-    exa
+    eza
     ripgrep
     fd
   ];
