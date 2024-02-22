@@ -10,6 +10,7 @@
   imports = [
     ./docker.nix
     ./font.nix
+    ./hyprland.nix
   ];
 
   environment.systemPackages = with pkgs; [
