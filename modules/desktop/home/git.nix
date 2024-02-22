@@ -3,6 +3,10 @@
     enable = true;
     userName = "AsPulse / あすぱる";
     userEmail = "contact@aspulse.dev";
+    lfs.enable = true;
+    extraConfig = {
+      diff.external = "difft";
+    };
   };
 
   programs.gh = {
@@ -18,5 +22,6 @@
 
   home.packages = with pkgs; [
     lazygit
+    difftastic
   ];
 }
