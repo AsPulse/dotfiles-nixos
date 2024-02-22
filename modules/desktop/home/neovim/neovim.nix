@@ -12,6 +12,7 @@
     recursive = false;
   };
   home.packages = with pkgs; [
+    neovide
     nodePackages.typescript-language-server
   ];
 }
