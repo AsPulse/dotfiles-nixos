@@ -18,6 +18,18 @@
     fd
     xcp
     dust
+    jq
+    yq
+    imagemagick
+    neofetch
+    nkf
+    jellyfin-ffmpeg
+    act
+    inkscape
+    google-cloud-sdk
+    obs-studio
+    gimp
+    mongodb-compass
   ];
 
   imports = [
