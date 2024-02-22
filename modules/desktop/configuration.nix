@@ -13,6 +13,10 @@
     vim
     wget
     curl
+    btop
+    gcc
+    clang
+    unzip
   ];
   environment.variables.EDITOR = "vim";
 

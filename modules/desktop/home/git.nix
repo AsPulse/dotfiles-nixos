@@ -6,7 +6,12 @@
     lfs.enable = true;
     extraConfig = {
       diff.external = "difft";
+      core.excludesfile = "~/.gitignore_global";
     };
+  };
+
+  home.file.".gitignore_global" = {
+    source = ./git/.gitignore_global;
   };
 
   programs.gh = {
