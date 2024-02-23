@@ -6,8 +6,6 @@
     pavucontrol
   ];
 
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
-
   # Video
 
   hardware = {
@@ -32,6 +30,7 @@
   # Screen sharing
 
   services.dbus.enable = true;
+  services.flatpak.enable = true;
   xdg.portal = {
     enable = true;
     wlr.enable = true;
@@ -44,6 +43,8 @@
   # Sound
 
   sound.enable = true;
+  hardware.pulseaudio.enable = false;
+  security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     audio.enable = true;

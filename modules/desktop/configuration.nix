@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ inputs, pkgs, ... }: {
   system.stateVersion = "23.11";
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_xanmod;
 
@@ -14,7 +14,13 @@
     ./font.nix
     ./hyprland.nix
     ./rclone.nix
-  ];
+  ] ++ (with inputs.nixos-hardware.nixosModules; [
+    common-cpu-intel
+    common-gpu-intel
+    common-gpu-nvidia
+    common-pc-ssd
+    common-pc-hdd
+  ]);
 
   environment.systemPackages = with pkgs; [
     git

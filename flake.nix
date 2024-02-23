@@ -7,6 +7,7 @@
     };
     rust-overlay.url = "github:oxalica/rust-overlay";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
   outputs = inputs: {
@@ -17,6 +18,7 @@
           ./hosts/vbox/configuration.nix
           ./modules/desktop/configuration.nix
         ];
+        specialArgs = { inherit inputs; };
       };
       alienware-desktop = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -24,6 +26,7 @@
           ./hosts/alienware/configuration.nix
           ./modules/desktop/configuration.nix
         ];
+        specialArgs = { inherit inputs; };
       };
     };
     homeConfigurations = {
