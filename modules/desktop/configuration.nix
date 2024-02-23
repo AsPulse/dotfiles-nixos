@@ -10,6 +10,7 @@
   imports = [
     ./docker.nix
     ./font.nix
+    ./hyprland.nix
   ];
 
   environment.systemPackages = with pkgs; [
@@ -21,6 +22,7 @@
     gcc
     clang
     unzip
+    lshw
   ];
   environment.variables.EDITOR = "vim";
 
@@ -36,7 +38,13 @@
     shell = pkgs.zsh;
     createHome = true;
     home = "/home/aspulse";
-    extraGroups = [ "wheel" ];
+    extraGroups = [
+      "wheel"
+      "video"
+      "audio"
+      "jackaudio"
+      "networkmanager"
+    ];
     isNormalUser = true;
     uid = 1000;
   };

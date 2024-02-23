@@ -11,4 +11,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelParams = ["nomodeset"];
+
+  virtualisation.virtualbox.guest.x11=true;
 }

@@ -25,11 +25,7 @@
     nkf
     jellyfin-ffmpeg
     act
-    inkscape
     google-cloud-sdk
-    obs-studio
-    gimp
-    mongodb-compass
   ];
 
   imports = [
@@ -39,5 +35,6 @@
     ./home/deno.nix
     ./home/rust.nix
     ./home/neovim.nix
+    ./home/hyprland.nix
   ];
 }
