@@ -7,6 +7,8 @@
     networkmanager.enable = true;
   };
 
+  time.timeZone = "Asia/Tokyo";
+
   imports = [
     ./docker.nix
     ./font.nix
