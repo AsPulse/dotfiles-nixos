@@ -12,6 +12,7 @@
     gimp
     mongodb-compass
     discord-ptb
+    keepassxc
   ];
 
   home.file.".config/hypr/hyprland.conf" = {
