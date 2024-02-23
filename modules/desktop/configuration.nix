@@ -38,7 +38,13 @@
     shell = pkgs.zsh;
     createHome = true;
     home = "/home/aspulse";
-    extraGroups = [ "wheel" "video" "audio" ];
+    extraGroups = [
+      "wheel"
+      "video"
+      "audio"
+      "jackaudio"
+      "networkmanager"
+    ];
     isNormalUser = true;
     uid = 1000;
   };

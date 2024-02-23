@@ -3,9 +3,12 @@
     grim
     slurp
     wl-clipboard
+    pavucontrol
   ];
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
+  # Video
 
   hardware = {
     opengl = {
@@ -25,7 +28,37 @@
     displayManager.sddm.enable = true;
     videoDrivers = ["nvidia"];
   };
+
+  # Screen sharing
+
+  services.dbus.enable = true;
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+    ];
+  };
+
+
+  # Sound
+
+  sound.enable = true;
+  services.pipewire = {
+    enable = true;
+    audio.enable = true;
+    pulse.enable = true;
+    alsa.enable = false;
+  };
+  services.jack = {
+    jackd.enable = true;
+    alsa.enable = false;
+    loopback.enable = true;
+  };
   
+
+  # Hyprland
+
   programs.hyprland = {
     enable = true;
     package = pkgs.hyprland;
