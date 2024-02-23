@@ -17,7 +17,6 @@
   ] ++ (with inputs.nixos-hardware.nixosModules; [
     common-cpu-intel
     common-gpu-intel
-    common-gpu-nvidia
     common-pc-ssd
     common-pc-hdd
   ]);
