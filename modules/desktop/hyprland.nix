@@ -30,6 +30,7 @@
   # Screen sharing
 
   services.dbus.enable = true;
+  services.flatpak.enable = true;
   xdg.portal = {
     enable = true;
     wlr.enable = true;
