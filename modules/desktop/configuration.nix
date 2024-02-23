@@ -11,6 +11,7 @@
     ./docker.nix
     ./font.nix
     ./hyprland.nix
+    ./rclone.nix
   ];
 
   environment.systemPackages = with pkgs; [
