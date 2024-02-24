@@ -4,12 +4,8 @@
     fcitx5.addons = with pkgs; [
       fcitx5-gtk
       fcitx5-mozc
-      fcitx5-skk-qt
+      (pkgs.callPackage ./fcitx5-skk {  })
       fcitx5-configtool
     ];
   };
-
-  home.packages = with pkgs; [
-    libskk
-  ];
 }

@@ -1,0 +1,47 @@
+From 9b367d2519ceb1431367fb8bc4b4e23e443223d5 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?AsPulse=20/=20=E3=81=82=E3=81=99=E3=81=B1=E3=82=8B?=
+ <contact@aspulse.dev>
+Date: Sat, 24 Feb 2024 16:23:31 +0900
+Subject: [PATCH 2/2] feat: rom-kana with z
+
+---
+ rules/azik/rom-kana/default.json    | 2 +-
+ rules/default/rom-kana/default.json | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/rules/azik/rom-kana/default.json b/rules/azik/rom-kana/default.json
+index 8afca10..1d9ee33 100644
+--- a/rules/azik/rom-kana/default.json
++++ b/rules/azik/rom-kana/default.json
+@@ -4,6 +4,7 @@
+     ],
+     "define": {
+         "rom-kana": {
++            "'": ["", "ー" ],
+             ";": ["", "っ" ],
+             "b.": ["", "ぶ" ],
+             "bd": ["", "べん" ],
+@@ -467,7 +468,6 @@
+             "yr": ["", "よる" ],
+             "yv": ["", "ゆう" ],
+             "yz": ["", "やん" ],
+-            "z.": ["", "ず" ],
+             "zc": ["", "ざ" ],
+             "zd": ["", "ぜん" ],
+             "zf": ["", "ぜ" ],
+diff --git a/rules/default/rom-kana/default.json b/rules/default/rom-kana/default.json
+index 6ddfce6..97f0c7d 100644
+--- a/rules/default/rom-kana/default.json
++++ b/rules/default/rom-kana/default.json
+@@ -214,7 +214,7 @@
+             "z ": ["", "　"],
+             "z*": ["", "※"],
+             "z,": ["", "‥" ],
+-            "z-": ["", "〜" ],
++            "~": ["", "〜" ],
+             "z.": ["", "…" ],
+             "z/": ["", "・" ],
+             "z0": ["", "○"],
+-- 
+2.43.0
+
