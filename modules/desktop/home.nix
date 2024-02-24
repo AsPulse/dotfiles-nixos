@@ -36,5 +36,6 @@
     ./home/rust.nix
     ./home/neovim.nix
     ./home/hyprland.nix
+    ./home/fcitx.nix
   ];
 }

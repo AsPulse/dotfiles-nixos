@@ -1,0 +1,91 @@
+From 76c29133d215bd7031407fe13261bbe80d75f90b Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?AsPulse=20/=20=E3=81=82=E3=81=99=E3=81=B1=E3=82=8B?=
+ <contact@aspulse.dev>
+Date: Sat, 24 Feb 2024 16:23:13 +0900
+Subject: [PATCH 1/2] fix: conflicted keymap
+
+---
+ rules/azik/keymap/hiragana.json    | 2 +-
+ rules/azik/keymap/katakana.json    | 2 +-
+ rules/default/keymap/default.json  | 1 -
+ rules/default/keymap/hiragana.json | 4 ++--
+ rules/default/keymap/katakana.json | 4 ++--
+ 5 files changed, 6 insertions(+), 7 deletions(-)
+
+diff --git a/rules/azik/keymap/hiragana.json b/rules/azik/keymap/hiragana.json
+index 65c537c..5978f00 100644
+--- a/rules/azik/keymap/hiragana.json
++++ b/rules/azik/keymap/hiragana.json
+@@ -5,7 +5,7 @@
+     ],
+     "define": {
+         "keymap": {
+-            "[": "set-input-mode-katakana",
++            "`": "set-input-mode-katakana",
+             "q": null,
+             "Q": "start-preedit insert-kana-ん"
+         }
+diff --git a/rules/azik/keymap/katakana.json b/rules/azik/keymap/katakana.json
+index 9bba053..32690f2 100644
+--- a/rules/azik/keymap/katakana.json
++++ b/rules/azik/keymap/katakana.json
+@@ -5,7 +5,7 @@
+     ],
+     "define": {
+         "keymap": {
+-            "[": "set-input-mode-hiragana",
++            "`": "set-input-mode-hiragana",
+             "q": null,
+             "Q": "start-preedit insert-kana-ン"
+         }
+diff --git a/rules/default/keymap/default.json b/rules/default/keymap/default.json
+index b2d68dc..eb30ffb 100644
+--- a/rules/default/keymap/default.json
++++ b/rules/default/keymap/default.json
+@@ -7,7 +7,6 @@
+             "\b": "delete",
+             "C-h": "delete",
+             "/": "abbrev",
+-            "\\": "kuten",
+             " ": "next-candidate",
+             "\t": "complete",
+             "C-i": "complete",
+diff --git a/rules/default/keymap/hiragana.json b/rules/default/keymap/hiragana.json
+index 1574b67..afcb052 100644
+--- a/rules/default/keymap/hiragana.json
++++ b/rules/default/keymap/hiragana.json
+@@ -4,11 +4,11 @@
+     ],
+     "define": {
+         "keymap": {
+-            "q": "set-input-mode-katakana",
++            "`": "set-input-mode-katakana",
+             "Q": "start-preedit",
+             "l": "set-input-mode-latin",
+             "L": "set-input-mode-wide-latin",
+-            "C-q": "set-input-mode-hankaku-katakana",
++            "C-`": "set-input-mode-hankaku-katakana",
+ 	    "C-j": "commit"
+         }
+     }
+diff --git a/rules/default/keymap/katakana.json b/rules/default/keymap/katakana.json
+index afdff25..65fc97a 100644
+--- a/rules/default/keymap/katakana.json
++++ b/rules/default/keymap/katakana.json
+@@ -4,11 +4,11 @@
+     ],
+     "define": {
+         "keymap": {
+-            "q": "set-input-mode-hiragana",
++            "`": "set-input-mode-hiragana",
+             "Q": "start-preedit",
+             "l": "set-input-mode-latin",
+             "L": "set-input-mode-wide-latin",
+-            "C-q": "set-input-mode-hankaku-katakana",
++            "C-`": "set-input-mode-hankaku-katakana",
+ 	    "C-j": "commit"
+         }
+     }
+-- 
+2.43.0
+

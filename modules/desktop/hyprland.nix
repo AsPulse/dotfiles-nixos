@@ -4,6 +4,7 @@
     slurp
     wl-clipboard
     pavucontrol
+    gtk4 # for fcitx5
   ];
 
   # Video
@@ -19,6 +20,10 @@
       nvidiaSettings = true;
       package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
+  };
+  environment.sessionVariables = {
+    LIBVA_DRIVER_NAME = "nvidia";
+    VDPAU_DRIVER = "nvidia";
   };
 
   services.xserver = { 
