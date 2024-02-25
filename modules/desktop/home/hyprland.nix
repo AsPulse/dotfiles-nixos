@@ -11,7 +11,7 @@
     obs-studio
     gimp
     mongodb-compass
-    (pkgs.callPackage ./discord-ptb {  })
+    discord-ptb
     keepassxc
   ];
 
