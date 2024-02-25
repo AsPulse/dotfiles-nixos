@@ -14,11 +14,18 @@
       enable = true;
       driSupport = true;
       driSupport32Bit = true;
+      extraPackages = with pkgs; [
+        vaapiVdpau
+        libvdpau-va-gl
+        nvidia-vaapi-driver
+      ];
     };
     nvidia = {
       modesetting.enable = true;
       nvidiaSettings = true;
       package = config.boot.kernelPackages.nvidiaPackages.stable;
+      nvidiaPersistenced = true;
+      powerManagement.enable = true;
     };
   };
   environment.sessionVariables = {
