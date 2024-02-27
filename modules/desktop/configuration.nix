@@ -14,9 +14,8 @@
     ./font.nix
     ./hyprland.nix
     ./rclone.nix
+    ./nvidia.nix
   ] ++ (with inputs.nixos-hardware.nixosModules; [
-    # common-cpu-intel
-    # common-gpu-intel
     common-pc-ssd
     common-pc-hdd
   ]);
