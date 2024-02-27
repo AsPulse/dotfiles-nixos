@@ -11,7 +11,6 @@
     obs-studio
     gimp
     mongodb-compass
-    discord-ptb
     keepassxc
   ];
 

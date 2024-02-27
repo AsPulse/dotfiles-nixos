@@ -15,8 +15,8 @@
     ./hyprland.nix
     ./rclone.nix
   ] ++ (with inputs.nixos-hardware.nixosModules; [
-    common-cpu-intel
-    common-gpu-intel
+    # common-cpu-intel
+    # common-gpu-intel
     common-pc-ssd
     common-pc-hdd
   ]);
