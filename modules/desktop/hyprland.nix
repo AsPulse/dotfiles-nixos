@@ -5,6 +5,7 @@
     wl-clipboard
     pavucontrol
     gtk4 # for fcitx5
+    swaynotificationcenter
   ];
 
   # Video
