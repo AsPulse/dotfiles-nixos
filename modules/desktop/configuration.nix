@@ -14,9 +14,8 @@
     ./font.nix
     ./hyprland.nix
     ./rclone.nix
+    ./nvidia.nix
   ] ++ (with inputs.nixos-hardware.nixosModules; [
-    common-cpu-intel
-    common-gpu-intel
     common-pc-ssd
     common-pc-hdd
   ]);
@@ -31,6 +30,7 @@
     clang
     unzip
     lshw
+    nix-prefetch-github
   ];
   environment.variables.EDITOR = "vim";
 

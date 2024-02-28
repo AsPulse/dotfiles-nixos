@@ -38,7 +38,7 @@
   programs.gpg.enable = true;
   services.gpg-agent = {
     enable = true;
-    pinentryFlavor = "qt";
+    pinentryFlavor = "curses";
   };
 
   home.packages = with pkgs; [

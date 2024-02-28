@@ -1,31 +1,15 @@
-{ config, pkgs, ... }: {
+{ inputs, config, pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     grim
     slurp
     wl-clipboard
     pavucontrol
     gtk4 # for fcitx5
+    swaynotificationcenter
+    dex
   ];
 
   # Video
-
-  hardware = {
-    opengl = {
-      enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
-    };
-    nvidia = {
-      modesetting.enable = true;
-      nvidiaSettings = true;
-      package = config.boot.kernelPackages.nvidiaPackages.stable;
-    };
-  };
-  environment.sessionVariables = {
-    LIBVA_DRIVER_NAME = "nvidia";
-    VDPAU_DRIVER = "nvidia";
-  };
-
   services.xserver = { 
     enable = true;
     displayManager.sddm.enable = true;
@@ -67,7 +51,7 @@
 
   programs.hyprland = {
     enable = true;
-    package = pkgs.hyprland;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     xwayland.enable = true;
   };
 }
