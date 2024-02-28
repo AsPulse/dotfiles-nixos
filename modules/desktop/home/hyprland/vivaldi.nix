@@ -9,7 +9,7 @@
         "--enable-gpu-rasterization"
         "--enable-skia-renderer"
         "--canvas-oop-rasterization"
-        "--disable-gpu-driver-bug-workarounds"
+        # "--disable-gpu-driver-bug-workarounds"
         "--enable-zero-copy"
         "--ignore-gpu-blocklist"
         "--use-vulkan"

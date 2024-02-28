@@ -30,6 +30,7 @@
     clang
     unzip
     lshw
+    nix-prefetch-github
   ];
   environment.variables.EDITOR = "vim";
 
