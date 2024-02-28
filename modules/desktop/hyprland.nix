@@ -6,6 +6,7 @@
     pavucontrol
     gtk4 # for fcitx5
     swaynotificationcenter
+    dex
   ];
 
   # Video

@@ -21,5 +21,11 @@
     })
     vivaldi-ffmpeg-codecs
     widevine-cdm
+    (chromium.override {
+      commandLineArgs = [
+        "--enable-features=UseOzonePlatform"
+        "--ozone-platform=wayland"
+      ];
+    })
   ];
 }
