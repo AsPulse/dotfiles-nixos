@@ -15,6 +15,8 @@
     neovide
     lua-language-server
     editorconfig-checker
+    rust-analyzer
+    tree-sitter
   ] ++ (with pkgs.nodePackages; [
     typescript-language-server
   ]);

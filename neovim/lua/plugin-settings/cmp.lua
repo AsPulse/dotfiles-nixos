@@ -21,9 +21,6 @@ return {
       { 'hrsh7th/cmp-buffer' },
       { 'hrsh7th/cmp-cmdline' },
       { 'yutkat/cmp-mocword' },
-      {
-        'simrat39/rust-tools.nvim'
-      },
       { 'b0o/schemastore.nvim' },
     },
     config = function()
@@ -150,39 +147,6 @@ return {
       --             validate = { enable = true },
       --           }
       --         }
-      --       })
-      --       return
-      --     end
-      --     if server_name == 'rust_analyzer' then
-      --       local rt = require('rust-tools')
-      --       rt.setup({
-      --         server = {
-      --           on_attach = function(client, bufnr)
-      --             on_attach(client, bufnr)
-      --             vim.keymap.set('n', 'K', rt.hover_actions.hover_actions, { buffer = bufnr })
-      --             vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
-      --               buffer = bufnr,
-      --               callback = function()
-      --                 if vim.fn.exists(':RustFmt') > 0 then
-      --                   vim.cmd([[RustFmt]])
-      --                 else
-      --                   print('rustfmt not found')
-      --                 end
-      --               end
-      --             })
-      --           end,
-      --           settings = {
-      --             ['rust-analyzer'] = {
-      --               check = {
-      --                 command = 'clippy'
-      --               },
-      --               lens = {
-      --                 enable = true
-      --               },
-      --               checkOnSave = true,
-      --             }
-      --           }
-      --         },
       --       })
       --       return
       --     end

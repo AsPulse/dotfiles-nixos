@@ -1,5 +1,55 @@
 return {
   {
+    'mrcjkb/rustaceanvim',
+    version = '^4',
+    lazy = true,
+    ft = { 'rust' },
+    dependencies = {
+      'neovim/nvim-lspconfig',
+      'mfussenegger/nvim-dap',
+    },
+    init = function()
+      -- Rust
+      vim.g.rustaceanvim = {
+        server = {
+          on_attach = function(_, bufnr)
+            vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
+              buffer = bufnr,
+              callback = function()
+                if vim.fn.exists(':RustFmt') > 0 then
+                  vim.cmd([[RustFmt]])
+                else
+                  print('rustfmt not found')
+                end
+              end
+            })
+          end,
+          default_settings = {
+            ["rust-analyzer"] = {
+              check = {
+                command = 'clippy'
+              },
+              lens = {
+                enable = true
+              },
+              assist = {
+                importGranularity = "module",
+                importPrefix = "self",
+              },
+              cargo = {
+                loadOutDirsFromCheck = true
+              },
+              procMacro = {
+                enable = true
+              },
+              checkOnSave = true,
+            }
+          },
+        }
+      }
+    end,
+  },
+  {
     'neovim/nvim-lspconfig',
     lazy = true,
     event = { 'BufEnter *.*', 'VeryLazy' },
@@ -8,6 +58,7 @@ return {
       'nvim-lua/plenary.nvim',
       'nvimdev/lspsaga.nvim',
       'SmiteshP/nvim-navic',
+      'simrat39/rust-tools.nvim',
     },
     config = function()
       local null_ls = require('null-ls')
