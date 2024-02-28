@@ -13,6 +13,9 @@
   };
   home.packages = with pkgs; [
     neovide
-    nodePackages.typescript-language-server
-  ];
+    lua-language-server
+    editorconfig-checker
+  ] ++ (with pkgs.nodePackages; [
+    typescript-language-server
+  ]);
 }

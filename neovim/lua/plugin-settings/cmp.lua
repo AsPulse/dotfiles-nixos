@@ -22,7 +22,6 @@ return {
       { 'hrsh7th/cmp-buffer' },
       { 'hrsh7th/cmp-cmdline' },
       { 'yutkat/cmp-mocword' },
-      { 'SmiteshP/nvim-navic' },
       {
         'simrat39/rust-tools.nvim'
       },
@@ -30,7 +29,6 @@ return {
     },
     config = function()
       local cmp = require('cmp')
-      local lspconfig = require('lspconfig')
       cmp.setup({
         enabled = true,
         snippet = {
@@ -107,125 +105,98 @@ return {
           }
         })
       })
-      local navic = require('nvim-navic')
-      local capabilities = require('cmp_nvim_lsp').default_capabilities()
-      local on_attach = function (client, bufnr)
-        if client.server_capabilities.documentSymbolProvider then
-          navic.attach(client, bufnr)
-        end
-        local bufopts = { noremap = true, silent = true, buffer = bufnr }
-        vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, bufopts)
-        vim.keymap.set('n', '<leader>gr', vim.lsp.buf.references, bufopts)
-        client.server_capabilities.document_formatting = false
-        client.server_capabilities.documentFormattingProvider = false
-        client.server_capabilities.documentRangeFormattingProvider = false
-      end
-      require('mason-lspconfig').setup_handlers({
-        function(server_name)
-          local setupfunc = lspconfig[server_name]
-          if server_name == 'tsserver' then
-            setupfunc.setup({
-              on_attach = function(client, bufnr)
-                on_attach(client, bufnr)
-                vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
-                  buffer = bufnr,
-                  callback = function()
-                    if vim.fn.exists(':EslintFixAll') > 0 then
-                      vim.cmd([[EslintFixAll]])
-                    end
-                  end
-                })
-              end,
-              capabilities = capabilities,
-              root_dir = lspconfig.util.root_pattern('yarn.lock', 'package-lock.json', 'pnpm-lock.json', 'pnpm-lock.yaml'),
-              single_file_support = false,
-            })
-            return
-          end
-          if server_name == 'denols' then
-            setupfunc.setup({
-              on_attach = on_attach,
-              capabilities = capabilities,
-              root_dir = lspconfig.util.root_pattern('deno.json', 'deno.jsonc'),
-              single_file_support = false,
-              init_options = {
-                lint = true,
-                unstable = true
-              }
-            })
-            return
-          end
-          if server_name == 'lua_ls' then
-            setupfunc.setup({
-              on_attach = on_attach,
-              capabilities = capabilities,
-              settings = {
-                Lua = {
-                  diagnostics = {
-                    globals = { 'vim' }
-                  }
-                }
-              }
-            })
-            return
-          end
-          if server_name == 'jsonls' then
-            setupfunc.setup({
-              on_attach = on_attach,
-              capabilities = capabilities,
-              settings = {
-                json = {
-                  schemas = require('schemastore').json.schemas(),
-                  validate = { enable = true },
-                }
-              }
-            })
-            return
-          end
-          if server_name == 'rust_analyzer' then
-            local rt = require('rust-tools')
-            rt.setup({
-              server = {
-                on_attach = function(client, bufnr)
-                  on_attach(client, bufnr)
-                  vim.keymap.set('n', 'K', rt.hover_actions.hover_actions, { buffer = bufnr })
-                  vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
-                    buffer = bufnr,
-                    callback = function()
-                      if vim.fn.exists(':RustFmt') > 0 then
-                        vim.cmd([[RustFmt]])
-                      else
-                        print('rustfmt not found')
-                      end
-                    end
-                  })
-                end,
-                settings = {
-                  ['rust-analyzer'] = {
-                    check = {
-                      command = 'clippy'
-                    },
-                    lens = {
-                      enable = true
-                    },
-                    checkOnSave = true,
-                  }
-                }
-              },
-            })
-            return
-          end
-          if server_name == 'bashls' then
-            setupfunc.setup({
-              on_attach = on_attach,
-              capabilities = capabilities,
-              filetypes = { 'sh', 'zsh' }
-            })
-            return
-          end
-          setupfunc.setup({ capabilities = capabilities, on_attach = on_attach })
-        end
-      })
+      -- require('mason-lspconfig').setup_handlers({
+      --   function(server_name)
+      --     local setupfunc = lspconfig[server_name]
+      --     if server_name == 'tsserver' then
+      --       setupfunc.setup({
+      --         on_attach = function(client, bufnr)
+      --           on_attach(client, bufnr)
+      --           vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
+      --             buffer = bufnr,
+      --             callback = function()
+      --               if vim.fn.exists(':EslintFixAll') > 0 then
+      --                 vim.cmd([[EslintFixAll]])
+      --               end
+      --             end
+      --           })
+      --         end,
+      --         capabilities = capabilities,
+      --         root_dir = lspconfig.util.root_pattern('yarn.lock', 'package-lock.json', 'pnpm-lock.json', 'pnpm-lock.yaml'),
+      --         single_file_support = false,
+      --       })
+      --       return
+      --     end
+      --     if server_name == 'denols' then
+      --       setupfunc.setup({
+      --         on_attach = on_attach,
+      --         capabilities = capabilities,
+      --         root_dir = lspconfig.util.root_pattern('deno.json', 'deno.jsonc'),
+      --         single_file_support = false,
+      --         init_options = {
+      --           lint = true,
+      --           unstable = true
+      --         }
+      --       })
+      --       return
+      --     end
+      --     if server_name == 'jsonls' then
+      --       setupfunc.setup({
+      --         on_attach = on_attach,
+      --         capabilities = capabilities,
+      --         settings = {
+      --           json = {
+      --             schemas = require('schemastore').json.schemas(),
+      --             validate = { enable = true },
+      --           }
+      --         }
+      --       })
+      --       return
+      --     end
+      --     if server_name == 'rust_analyzer' then
+      --       local rt = require('rust-tools')
+      --       rt.setup({
+      --         server = {
+      --           on_attach = function(client, bufnr)
+      --             on_attach(client, bufnr)
+      --             vim.keymap.set('n', 'K', rt.hover_actions.hover_actions, { buffer = bufnr })
+      --             vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
+      --               buffer = bufnr,
+      --               callback = function()
+      --                 if vim.fn.exists(':RustFmt') > 0 then
+      --                   vim.cmd([[RustFmt]])
+      --                 else
+      --                   print('rustfmt not found')
+      --                 end
+      --               end
+      --             })
+      --           end,
+      --           settings = {
+      --             ['rust-analyzer'] = {
+      --               check = {
+      --                 command = 'clippy'
+      --               },
+      --               lens = {
+      --                 enable = true
+      --               },
+      --               checkOnSave = true,
+      --             }
+      --           }
+      --         },
+      --       })
+      --       return
+      --     end
+      --     if server_name == 'bashls' then
+      --       setupfunc.setup({
+      --         on_attach = on_attach,
+      --         capabilities = capabilities,
+      --         filetypes = { 'sh', 'zsh' }
+      --       })
+      --       return
+      --     end
+      --     setupfunc.setup({ capabilities = capabilities, on_attach = on_attach })
+      --   end
+      -- })
     end
   }
 }
