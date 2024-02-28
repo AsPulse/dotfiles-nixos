@@ -68,6 +68,7 @@ return {
           { name = 'mocword' },
         }),
         formatting = {
+          expandable_indicator = true,
           fields = { 'kind', 'abbr', 'menu' },
           format = function(entry, vim_item)
             local kind = require('lspkind').cmp_format({
