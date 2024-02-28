@@ -2,6 +2,7 @@ return {
   {
     'neovim/nvim-lspconfig',
     lazy = true,
+    event = { 'BufEnter *.*', 'VeryLazy' },
     dependencies = {
       'jose-elias-alvarez/null-ls.nvim',
       'nvim-lua/plenary.nvim',
@@ -45,7 +46,7 @@ return {
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('UserLspConfig', {}),
         callback = function(event)
-          local client = vim.lsp.get_client_by_id(event.client_id)
+          local client = vim.lsp.get_client_by_id(event.data.client_id)
           if client == nil then
             print('No client found on LspAttach. (lsp.lua)');
             return

@@ -8,7 +8,6 @@ return {
     'hrsh7th/nvim-cmp',
     event = { 'BufEnter *.*', 'CmdlineEnter', 'VeryLazy' },
     dependencies = {
-      { 'williamboman/mason-lspconfig.nvim' },
       { 'onsails/lspkind.nvim' },
       { 'hrsh7th/vim-vsnip' },
       {
