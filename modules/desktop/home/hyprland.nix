@@ -14,6 +14,7 @@
     keepassxc
     (pkgs.callPackage ./discord-browser {  })
     (pkgs.callPackage ./youtube-wayland {  })
+    (pkgs.callPackage ./cookieclicker-browser {  })
   ];
 
   home.file.".config/hypr/hyprland.conf" = {
