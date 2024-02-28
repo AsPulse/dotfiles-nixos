@@ -1,4 +1,6 @@
-local set = vim.api.nvim_set_option
+local set = function(key, value)
+  vim.api.nvim_set_option_value(key, value, { scope = 'global' })
+end
 
 set('expandtab', true)
 set('smartindent', true)
