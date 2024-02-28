@@ -13,6 +13,7 @@
     mongodb-compass
     keepassxc
     (pkgs.callPackage ./discord-browser {  })
+    (pkgs.callPackage ./youtube-wayland {  })
   ];
 
   home.file.".config/hypr/hyprland.conf" = {
