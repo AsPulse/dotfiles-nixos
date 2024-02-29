@@ -26,6 +26,7 @@
     jellyfin-ffmpeg
     act
     google-cloud-sdk
+    minecraft
   ];
 
   imports = [
