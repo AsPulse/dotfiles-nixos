@@ -9,6 +9,12 @@
       enable = true;
       driSupport = true;
       driSupport32Bit = true;
+      setLdLibraryPath = true;
+      extraPackages = with pkgs; [
+        libGL
+        mesa-demos
+        mesa.drivers
+      ];
     };
     nvidia = {
       modesetting.enable = true;

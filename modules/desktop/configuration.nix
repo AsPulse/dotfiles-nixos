@@ -31,6 +31,7 @@
     unzip
     lshw
     nix-prefetch-github
+    nix-locate
   ];
   environment.variables.EDITOR = "vim";
 
