@@ -17,6 +17,7 @@
     editorconfig-checker
     rust-analyzer
     tree-sitter
+    dockerfile-language-server-nodejs
   ] ++ (with pkgs.nodePackages; [
     typescript-language-server
   ]);

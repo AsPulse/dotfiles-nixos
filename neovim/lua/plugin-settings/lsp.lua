@@ -70,6 +70,9 @@ return {
 
       local lspconfig = require('lspconfig')
 
+      -- Dockerls
+      lspconfig.dockerls.setup {}
+
       -- Lua Language Server
       lspconfig.lua_ls.setup({
         settings = {
