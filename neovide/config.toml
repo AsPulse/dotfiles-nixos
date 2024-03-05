@@ -1,0 +1,9 @@
+[[font.normal]]
+family = "FiraCode Nerd Font Mono"
+
+[[font.normal]]
+family = "Noto Sans Mono CJK JP"
+style = "Regular"
+
+[font]
+size = 15

@@ -1,11 +1,11 @@
 vim.g.clipboard = {
-  name = 'CopyQ',
+  name = 'wl-clipboard',
   copy = {
-    ['+'] = 'copyq copy',
-    ['*'] = 'copyq copy',
+    ['+'] = 'wl-copy --trim-newline',
+    ['*'] = 'wl-copy --trim-newline',
   },
   paste = {
-    ['+'] = 'copyq read',
-    ['*'] = 'copyq read',
+    ['+'] = 'wl-paste --no-newline',
+    ['*'] = 'wl-paste --no-newline',
   },
 };

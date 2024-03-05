@@ -11,8 +11,23 @@
     source = ../../../tsnip;
     recursive = false;
   };
+  home.file.".config/neovide" = {
+    source = ../../../neovide;
+    recursive = false;
+  };
+
   home.packages = with pkgs; [
     neovide
-    nodePackages.typescript-language-server
-  ];
+    lua-language-server
+    editorconfig-checker
+    rust-analyzer
+    tree-sitter
+    dockerfile-language-server-nodejs
+    vscode-langservers-extracted
+    yaml-language-server
+    nixd
+  ] ++ (with pkgs.nodePackages; [
+    typescript-language-server
+    bash-language-server
+  ]);
 }

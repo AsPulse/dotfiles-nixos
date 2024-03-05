@@ -4,7 +4,6 @@ return {
     lazy = true,
     init = function ()
       vim.api.nvim_set_var('denops#debug', 0)
-      vim.g["denops#deno"] = "~/.nix-profile/bin/deno"
     end
   },
   {

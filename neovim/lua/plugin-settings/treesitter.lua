@@ -17,6 +17,10 @@ return {
     },
     config = function()
       require('nvim-treesitter.configs').setup {
+        sync_install = false,
+        auto_install = false,
+        ignore_install = {},
+        modules = {},
         ensure_installed = {
           'typescript', 'tsx', 'jsdoc',
           'diff',
