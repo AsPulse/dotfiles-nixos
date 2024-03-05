@@ -71,6 +71,32 @@ return {
 
       local lspconfig = require('lspconfig')
 
+      -- tsserver
+      lspconfig.tsserver.setup {
+        on_attach = function(_, bufnr)
+          vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
+            buffer = bufnr,
+            callback = function()
+              if vim.fn.exists(':EslintFixAll') > 0 then
+                vim.cmd([[EslintFixAll]])
+              end
+            end
+          })
+        end,
+        root_dir = lspconfig.util.root_pattern('yarn.lock', 'package-lock.json', 'pnpm-lock.json', 'pnpm-lock.yaml'),
+        single_file_support = false,
+      }
+
+      -- Denols
+      lspconfig.denols.setup {
+        root_dir = lspconfig.util.root_pattern('deno.json', 'deno.jsonc'),
+        single_file_support = false,
+        init_options = {
+          lint = true,
+          unstable = true
+        }
+      }
+
       -- Dockerls
       lspconfig.dockerls.setup {}
 
