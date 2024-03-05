@@ -106,6 +106,19 @@ return {
         }
       }
 
+      -- yamlls
+      lspconfig.yamlls.setup {
+        settings = {
+          yaml = {
+            schemaStore = {
+              enable = false,
+              url = "",
+            },
+            schemas = require('schemastore').yaml.schemas(),
+          }
+        }
+      }
+
       -- LspAttach Setup
       local navic = require('nvim-navic')
       vim.api.nvim_create_autocmd('LspAttach', {

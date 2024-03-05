@@ -24,6 +24,7 @@
     tree-sitter
     dockerfile-language-server-nodejs
     vscode-langservers-extracted
+    yaml-language-server
   ] ++ (with pkgs.nodePackages; [
     typescript-language-server
   ]);
