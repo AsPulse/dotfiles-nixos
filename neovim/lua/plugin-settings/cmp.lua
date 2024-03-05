@@ -21,7 +21,6 @@ return {
       { 'hrsh7th/cmp-buffer' },
       { 'hrsh7th/cmp-cmdline' },
       { 'yutkat/cmp-mocword' },
-      { 'b0o/schemastore.nvim' },
     },
     config = function()
       local cmp = require('cmp')
@@ -133,19 +132,6 @@ return {
       --         init_options = {
       --           lint = true,
       --           unstable = true
-      --         }
-      --       })
-      --       return
-      --     end
-      --     if server_name == 'jsonls' then
-      --       setupfunc.setup({
-      --         on_attach = on_attach,
-      --         capabilities = capabilities,
-      --         settings = {
-      --           json = {
-      --             schemas = require('schemastore').json.schemas(),
-      --             validate = { enable = true },
-      --           }
       --         }
       --       })
       --       return

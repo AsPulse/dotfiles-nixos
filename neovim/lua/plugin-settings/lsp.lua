@@ -59,6 +59,7 @@ return {
       'nvimdev/lspsaga.nvim',
       'SmiteshP/nvim-navic',
       'simrat39/rust-tools.nvim',
+      'b0o/schemastore.nvim',
     },
     config = function()
       local null_ls = require('null-ls')
@@ -94,6 +95,16 @@ return {
         },
       })
 
+      -- jsonls
+      lspconfig.jsonls.setup {
+        filetypes = { "json", "jsonc", "jsonl", "json5" },
+        settings = {
+          json = {
+          schemas = require('schemastore').json.schemas(),
+            validate = { enable = true },
+          }
+        }
+      }
 
       -- LspAttach Setup
       local navic = require('nvim-navic')
