@@ -101,20 +101,6 @@ return {
           }
         })
       })
-      -- require('mason-lspconfig').setup_handlers({
-      --   function(server_name)
-      --     local setupfunc = lspconfig[server_name]
-      --     if server_name == 'bashls' then
-      --       setupfunc.setup({
-      --         on_attach = on_attach,
-      --         capabilities = capabilities,
-      --         filetypes = { 'sh', 'zsh' }
-      --       })
-      --       return
-      --     end
-      --     setupfunc.setup({ capabilities = capabilities, on_attach = on_attach })
-      --   end
-      -- })
     end
   }
 }

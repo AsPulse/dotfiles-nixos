@@ -145,6 +145,11 @@ return {
         }
       }
 
+      -- bash-language-server
+      lspconfig.bashls.setup {
+        filetypes = { 'sh', 'zsh' }
+      }
+
       -- nixd (Nix language server)
       lspconfig.nixd.setup {}
 
