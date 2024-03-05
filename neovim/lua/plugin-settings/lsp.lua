@@ -119,6 +119,9 @@ return {
         }
       }
 
+      -- nixd (Nix language server)
+      lspconfig.nixd.setup {}
+
       -- LspAttach Setup
       local navic = require('nvim-navic')
       vim.api.nvim_create_autocmd('LspAttach', {

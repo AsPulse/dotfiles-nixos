@@ -25,6 +25,7 @@
     dockerfile-language-server-nodejs
     vscode-langservers-extracted
     yaml-language-server
+    nixd
   ] ++ (with pkgs.nodePackages; [
     typescript-language-server
   ]);
