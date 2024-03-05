@@ -41,6 +41,10 @@
     pinentryFlavor = "curses";
   };
 
+  home.file.".config/lazygit/config.yml" = {
+    source = ../../../lazygit/config.yml;
+  };
+
   home.packages = with pkgs; [
     lazygit
     difftastic
