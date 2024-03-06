@@ -17,7 +17,7 @@
         system = "x86_64-linux";
         modules = [
           ./hosts/vbox/configuration.nix
-          ./modules/desktop/configuration.nix
+          ./nixos/desktop/configuration.nix
         ];
         specialArgs = { inherit inputs; };
       };
@@ -25,7 +25,7 @@
         system = "x86_64-linux";
         modules = [
           ./hosts/alienware/configuration.nix
-          ./modules/desktop/configuration.nix
+          ./nixos/desktop/configuration.nix
         ];
         specialArgs = { inherit inputs; };
       };
@@ -42,7 +42,7 @@
         };
         extraSpecialArgs = { inherit inputs; };
         modules = [
-          ./modules/desktop/home.nix
+          ./home-manager/home.nix
         ];
       };
     };

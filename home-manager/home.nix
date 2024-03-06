@@ -29,13 +29,13 @@
   ];
 
   imports = [
-    ./home/zsh.nix
-    ./home/git.nix
-    ./home/node.nix
-    ./home/deno.nix
-    ./home/rust.nix
-    ./home/neovim.nix
-    ./home/hyprland.nix
-    ./home/fcitx.nix
+    ./zsh.nix
+    ./git.nix
+    ./node.nix
+    ./deno.nix
+    ./rust.nix
+    ./neovim.nix
+    ./hyprland.nix
+    ./fcitx.nix
   ];
 }
