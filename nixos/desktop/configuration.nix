@@ -16,6 +16,7 @@
     ./rclone.nix
     ./nvidia.nix
     ./bluetooth.nix
+    ./wireguard.nix
   ] ++ (with inputs.nixos-hardware.nixosModules; [
     common-pc-ssd
     common-pc-hdd
