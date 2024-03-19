@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     wireguard-tools
+    nettools
   ];
   systemd.services.wg0 = {
     description = "Wireguard VPN for wg0";

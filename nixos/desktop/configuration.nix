@@ -4,7 +4,13 @@
 
   networking = {
     hostName = "aspulse-nixos";
-    networkmanager.enable = true;
+    networkmanager = {
+      enable = true;
+    };
+  };
+
+  environment.etc = {
+    "resolv.conf".text = "nameserver 1.1.1.1\nnameserver 8.8.8.8\n";
   };
 
   time.timeZone = "Asia/Tokyo";
@@ -17,6 +23,7 @@
     ./nvidia.nix
     ./bluetooth.nix
     ./wireguard.nix
+    ./k8s.nix
   ] ++ (with inputs.nixos-hardware.nixosModules; [
     common-pc-ssd
     common-pc-hdd
