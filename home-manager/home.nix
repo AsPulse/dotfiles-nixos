@@ -26,6 +26,9 @@
     jellyfin-ffmpeg
     act
     google-cloud-sdk
+    cilium-cli
+    kubernetes-helm
+    krew
   ];
 
   imports = [

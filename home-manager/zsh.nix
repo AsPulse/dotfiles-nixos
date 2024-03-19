@@ -13,6 +13,7 @@
       la = "eza --all --icons --classify";
       ll = "eza --long --all --git --icons";
     };
+    profileExtra = "export PATH=\"\${KREW_ROOT:-$HOME/.krew}/bin:$PATH";
   };
   programs.starship = {
     enable = true;
