@@ -24,6 +24,7 @@
     ./bluetooth.nix
     ./wireguard.nix
     ./k8s.nix
+    ./steam.nix
   ] ++ (with inputs.nixos-hardware.nixosModules; [
     common-pc-ssd
     common-pc-hdd
@@ -40,6 +41,10 @@
     unzip
     lshw
     nix-prefetch-github
+    parted
+    gparted
+    openssl
+    pkg-config
   ];
   environment.variables.EDITOR = "vim";
 
