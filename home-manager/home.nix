@@ -41,5 +41,4 @@
     ./hyprland.nix
     ./fcitx.nix
   ];
-
 }
